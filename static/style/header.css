@@ -1,0 +1,50 @@
+header {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100vw;
+}
+
+
+
+#header-logo {
+    width: 40px;
+    padding: 10px;
+}
+
+#header-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 60px;
+    margin: 0;
+    padding: 0 6px;
+}
+
+a#header-title:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header-auth {
+    float: right;
+    margin: 15px;
+}
+.codecool-logo {
+    display: flex;
+   align-items: center;
+}
+.header-navigation ul li {
+    display: inline-block;
+
+}
+.header-navigation ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+}
+.header-navigation ul li a:hover {
+      color: red;
+    text-decoration: underline;
+}

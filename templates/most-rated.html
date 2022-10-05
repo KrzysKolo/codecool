@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Shows
+{% endblock %}
+
+{% block h1 %}
+  Shows - codecool Series database
+{% endblock %}
+
+{% block card %}
+<h2>This is interesting!!!</h2>
+<p> Stay on top and check which shows are currently the most popular !! </p>
+
+{% endblock %}
+{% block cardTitleTable %}
+<h5>Table of the most popular TV shows</h5>
+{% endblock %}
+
+{% block cardTable %}
+<thead>
+  <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Runtime</th>
+      <th>Rating</th>
+      <th>Genres</th>
+      <th>Tiler</th>
+      <th class="action-column">Homepage</th>
+  </tr>
+  </thead>
+  <tbody>
+    {% for item in mostRated %}
+    <tr>
+        <td class="titleMovie">{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td>{{ item[4] }}</td>
+        {% if item[5] %}
+          <td><a href="{{ item[5] }}" target="_blank">{{ item[5] }} </a></td>
+        {% else %}
+          <td><h4 style="color: #d00049;">No URL </h4></td>
+        {% endif %}
+
+        {% if item[6] %}
+        <td class="action-column">
+          <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
+          <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
+          <a href="{{item[6]}}" target="_blank"> {{ item[6] }}</a>
+      </td>
+        {% else %}
+        <td class="action-column">
+          <button type="button" class="icon-button"><i class="fa fa-edit fa-fw"></i></button>
+          <button type="button" class="icon-button"><i class="fa fa-trash fa-fw"></i></button>
+          <h4 style="color: #d00049;">No URL</h4>>
+      </td>
+
+        {% endif %}
+
+
+    </tr>
+    {% endfor %}
+{% endblock %}
